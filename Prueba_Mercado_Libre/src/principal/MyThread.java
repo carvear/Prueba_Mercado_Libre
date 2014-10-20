@@ -1,18 +1,19 @@
 package principal;
 
-import java.util.List;
-
 public class MyThread extends Thread {   
-    public MyThread(String str) {
+
+    /* Constructor de la clase */    
+    public MyThread(String str){
         super(str);
     }
-    public void run() {       
-        Primo pr = new Primo(Integer.parseInt(getName())); //Setear en 1000001 como dice la especificacion.
-        System.out.println("Nro"+pr.numero);
+    
+    /* Codigo a ser ejecutado por Threads */
+    public void run(){       
+        Primo pr = new Primo(Integer.parseInt(getName()));        
         if (pr.es_primo_circular()){
             System.out.println("ES"+pr.numero);
         }        
-        //currentThread().stop();
+        
         
         /*Primo pr = new Primo(100000); //Setear en 1000001 como dice la especificacion.        
         List lista_salida = pr.lista_primos_circulares();
@@ -21,7 +22,7 @@ public class MyThread extends Thread {
     }
     
     public static void main (String [] args) throws InterruptedException {
-        for(int i=2;i<1000001;i++){
+        for(int i=2;i<32;i++){ //1000001
             new MyThread(Integer.toString(i)).start();
             Thread.sleep(1);
         }
