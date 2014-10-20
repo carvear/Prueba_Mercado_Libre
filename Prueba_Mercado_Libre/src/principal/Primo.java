@@ -62,7 +62,7 @@ public class Primo extends Numero{
             if(valor.es_primo_circular())
             {                   
                 cantidad++;
-                lista_primos_circulares.add(k);                                                
+                lista_primos_circulares.add(k);  
             }
         }
         return lista_primos_circulares;
