@@ -6,7 +6,7 @@
 package principal;
 
 public class Numero {
-    int numero;
+    protected int numero;
     
     /* Constructor de la clase */
     public Numero(int numero){
