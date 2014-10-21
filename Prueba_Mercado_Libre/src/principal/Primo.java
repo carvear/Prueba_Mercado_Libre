@@ -5,9 +5,6 @@
 
 package principal;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Primo extends Numero{    
     
     /* Constructor de la clase */
@@ -49,22 +46,4 @@ public class Primo extends Numero{
         }
         return continuar;
     }
-  
-    /* Cuenta la cantidad de numeros primos circulares por debajo de un valor */
-    protected List lista_primos_circulares(){
-        List<Integer> lista_primos_circulares = new ArrayList<Integer>(); 
-        int k,cantidad = 0;        
-        Primo valor = new Primo(2);
-                
-        for(k = 2; k < this.numero; k++)
-        {   
-            valor.set_numero(k);            
-            if(valor.es_primo_circular())
-            {                   
-                cantidad++;
-                lista_primos_circulares.add(k);  
-            }
-        }
-        return lista_primos_circulares;
-    }  
 }

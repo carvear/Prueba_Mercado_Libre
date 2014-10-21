@@ -1,3 +1,8 @@
+/**
+ *
+ * @author Carlos G. Velázquez
+ */
+
 package principal;
 
 import java.util.ArrayList;
@@ -10,28 +15,34 @@ public class MyThread extends Thread {
     public MyThread(String str){
         super(str);
     }
+ 
+    /* Muestra por pantalla los elementos de una lista */
+    private static void mostrar_lista_elementos(List elementos){        
+        int i=0;
+        while(i < elementos.size()){
+            System.out.println(elementos.get(i));
+            i++;
+        }
+    }
     
     /* Codigo a ser ejecutado por Threads */
-    public void run(){       
-        Primo pr = new Primo(Integer.parseInt(getName()));        
-        if (pr.es_primo_circular()){            
-            lista_salida.add(pr.numero);            
-            System.out.println("ES"+pr.numero);
-        }
-        
-        /*Primo pr = new Primo(100000); //Setear en 1000001 como dice la especificacion.        
-        List lista_salida = pr.lista_primos_circulares();
-        System.out.println("Cantidad de Primos Circulares Menores a "+pr.numero+": "+pr.cantidad_elementos(lista_salida));
-        pr.mostrar_lista_elementos(lista_salida);*/
+    public void run(){
+        Primo pr = new Primo(Integer.parseInt(getName()));
+        int valor = pr.numero;
+        if (pr.es_primo_circular()){
+            lista_salida.add(valor);
+            System.out.println("Primo Circular: "+valor);
+        }        
     }
     
     /* Metodo principal */
     public static void main (String [] args) throws InterruptedException {
         int numero_evaluado = 32; //1000001
         for(int i=2;i<numero_evaluado;i++){ 
-            new MyThread(Integer.toString(i)).start();
-            Thread.sleep(1);
-        }        
+            new MyThread(Integer.toString(i)).start();            
+            Thread.sleep(1);            
+        }
+        Thread.sleep(2000);
         System.out.println("Cantidad de Primos Circulares Menores a "+numero_evaluado+": " + lista_salida.size());
     }
 }

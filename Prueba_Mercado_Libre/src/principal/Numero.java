@@ -5,8 +5,6 @@
 
 package principal;
 
-import java.util.List;
-
 public class Numero {
     int numero;
     
@@ -32,19 +30,5 @@ public class Numero {
     /* Fija el valor de la variable 'numero' en el dato miembro de la clase */
     protected void set_numero(int numero){
         this.numero = numero;
-    }
-    
-    /* Retorna la cantidad de elementos en la lista */
-    protected int cantidad_elementos(List elementos){        
-        return elementos.size();
-    }
-    
-    /* Muestra por pantalla los elementos de una lista */
-    protected void mostrar_lista_elementos(List elementos){        
-        int i=0;
-        while(i < elementos.size()){
-            System.out.println(elementos.get(i));
-            i++;
-        }
-   }       
+    }          
 }
