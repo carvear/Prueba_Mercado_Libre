@@ -37,7 +37,7 @@ public class MyThread extends Thread {
     
     /* Metodo principal */
     public static void main (String [] args) throws InterruptedException {
-        int numero_evaluado = 32; //1000001
+        int numero_evaluado = 1000001;
         for(int i=2;i<numero_evaluado;i++){ 
             new MyThread(Integer.toString(i)).start();            
             Thread.sleep(1);            
