@@ -20,6 +20,9 @@ public class Primo extends Numero{
              if(this.numero%i==0){ 
                  divisores++;  
              }  
+             if(divisores>2){
+                 i = this.numero+1;
+             }
          }
          
          if(divisores==2){                      
